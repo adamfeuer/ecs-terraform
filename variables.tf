@@ -1,20 +1,12 @@
-variable "aws_access_key" {
-    description = "The AWS access key."
-}
-
-variable "aws_secret_key" {
-    description = "The AWS secret key."
-}
-
 variable "region" {
     description = "The AWS region to create resources in."
-    default = "us-east-1"
+    default = "us-west-2"
 }
 
 # TODO: support multiple availability zones, and default to it.
 variable "availability_zone" {
     description = "The availability zone"
-    default = "us-east-1a"
+    default = "us-west-2a"
 }
 
 variable "ecs_cluster_name" {
@@ -26,7 +18,7 @@ variable "amis" {
     description = "Which AMI to spawn. Defaults to the AWS ECS optimized images."
     # TODO: support other regions.
     default = {
-        us-east-1 = "ami-ddc7b6b7"
+        us-west-2 = "ami-57d9cd2e"
     }
 }
 
@@ -37,12 +29,12 @@ variable "autoscale_min" {
 }
 
 variable "autoscale_max" {
-    default = "10"
+    default = "3"
     description = "Maximum autoscale (number of EC2)"
 }
 
 variable "autoscale_desired" {
-    default = "4"
+    default = "1"
     description = "Desired autoscale (number of EC2)"
 }
 
